@@ -206,10 +206,8 @@ void chassis_task(void const *pvParameters)
 		else
 		{
 			if(chassis_move.energe_chassis==1)   //若底盘不供电，则舵不动
-			{
-//				CAN_cmd_rudder(chassis_move.rudder_given_current[0],chassis_move.rudder_given_current[3],
-//			             chassis_move.rudder_given_current[1],chassis_move.rudder_given_current[2]);	   
-								CAN_cmd_rudder(chassis_move.rudder_given_current[0],chassis_move.rudder_given_current[1],
+			{   
+				CAN_cmd_rudder(chassis_move.rudder_given_current[0],chassis_move.rudder_given_current[1],
 			             chassis_move.rudder_given_current[2],chassis_move.rudder_given_current[3]);	
 			}
 			else{
@@ -219,7 +217,7 @@ void chassis_task(void const *pvParameters)
 										chassis_move.motor_chassis[2].give_current, chassis_move.motor_chassis[3].give_current);
 			CAN_cmd_gimbal(get_cap.capvot*100, 0); //发送电容电压
 		}
-		vTaskDelay(2);  //2
+		vTaskDelay(2);  //若为1可能会出现疯车，因为通信频率
 			
 		}
 }
