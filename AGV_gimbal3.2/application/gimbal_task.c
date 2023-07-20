@@ -578,7 +578,7 @@ static void gimbal_set_control(gimbal_control_t *set_control)
 		{
 			if (set_control->gimbal_rc_ctrl->key.v &  KEY_PRESSED_OFFSET_F || set_control->gimbal_rc_ctrl->rc.ch[4]>50)
 			{
-				set_control->chassis_mode_e_Cansend=20000;
+				set_control->chassis_mode_e_Cansend=20000;      //舵跟随云台
 				HAL_GPIO_WritePin(GPIOE, GPIO_PIN_14, GPIO_PIN_RESET);
 			}
 			else if (set_control->gimbal_rc_ctrl->key.v &  KEY_PRESSED_OFFSET_R)
@@ -588,18 +588,18 @@ static void gimbal_set_control(gimbal_control_t *set_control)
 			}
 			else if (set_control->gimbal_rc_ctrl->key.v &  KEY_PRESSED_OFFSET_SHIFT)
 			{
-				HAL_GPIO_WritePin(GPIOE, GPIO_PIN_14, GPIO_PIN_SET);
+				HAL_GPIO_WritePin(GPIOE, GPIO_PIN_14, GPIO_PIN_SET);   //小陀螺
 				set_control->chassis_mode_e_Cansend=30000;
 			}
 			else if ((set_control->gimbal_rc_ctrl->key.v &  KEY_PRESSED_OFFSET_CTRL))
 			{
 				HAL_GPIO_WritePin(GPIOE, GPIO_PIN_14, GPIO_PIN_RESET);
-				set_control->chassis_mode_e_Cansend=40000;
+				set_control->chassis_mode_e_Cansend=40000;       //底盘不动
 			}
 			else
 			{		
 				HAL_GPIO_WritePin(GPIOE, GPIO_PIN_14, GPIO_PIN_RESET);				
-				set_control->chassis_mode_e_Cansend=10000;
+				set_control->chassis_mode_e_Cansend=10000;    //底盘跟随云台
 			}
 				//发给底盘
 			

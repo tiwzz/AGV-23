@@ -243,9 +243,9 @@ void CAN_cmd_chassis(int16_t motor1, int16_t motor2, int16_t motor3, int16_t mot
   * @brief          发送数据至底盘
   * @author         LYH
   * @param[in]      relative_angle: 云台相对角度（扩大10000倍）
-  * @param[in]      level: 机器人等级
-  * @param[in]      rev: 保留
-  * @param[in]      rev2: 保留
+  * @param[in]      level: vx
+  * @param[in]      rev: vy
+  * @param[in]      rev2: 模式
   * @retval         none
   */
 void CAN_cmd_to_chassis(int16_t relative_angle,
