@@ -3,8 +3,8 @@ standard_tpye_c\can_receive.o: ..\application\CAN_receive.h
 standard_tpye_c\can_receive.o: ..\application\struct_typedef.h
 standard_tpye_c\can_receive.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 standard_tpye_c\can_receive.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-standard_tpye_c\can_receive.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stddef.h
-standard_tpye_c\can_receive.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stdint.h
+standard_tpye_c\can_receive.o: D:\Keil_v5\ARM\5.06\Bin\..\include\stddef.h
+standard_tpye_c\can_receive.o: D:\Keil_v5\ARM\5.06\Bin\..\include\stdint.h
 standard_tpye_c\can_receive.o: ../Inc/FreeRTOSConfig.h
 standard_tpye_c\can_receive.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 standard_tpye_c\can_receive.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -69,10 +69,10 @@ standard_tpye_c\can_receive.o: ../bsp/boards/bsp_rc.h
 standard_tpye_c\can_receive.o: ../components/algorithm/user_lib.h
 standard_tpye_c\can_receive.o: ..\application\rm_usart.h
 standard_tpye_c\can_receive.o: ../kalman/kalman.h
-standard_tpye_c\can_receive.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stdlib.h
-standard_tpye_c\can_receive.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stdio.h
-standard_tpye_c\can_receive.o: D:\MDK5\ARM\ARMCC\Bin\..\include\stdbool.h
-standard_tpye_c\can_receive.o: D:\MDK5\ARM\ARMCC\Bin\..\include\string.h
+standard_tpye_c\can_receive.o: D:\Keil_v5\ARM\5.06\Bin\..\include\stdlib.h
+standard_tpye_c\can_receive.o: D:\Keil_v5\ARM\5.06\Bin\..\include\stdio.h
+standard_tpye_c\can_receive.o: D:\Keil_v5\ARM\5.06\Bin\..\include\stdbool.h
+standard_tpye_c\can_receive.o: D:\Keil_v5\ARM\5.06\Bin\..\include\string.h
 standard_tpye_c\can_receive.o: ../components/algorithm/Include/arm_math.h
 standard_tpye_c\can_receive.o: ../Drivers/CMSIS/Include/core_cm4.h
-standard_tpye_c\can_receive.o: D:\MDK5\ARM\ARMCC\Bin\..\include\math.h
+standard_tpye_c\can_receive.o: D:\Keil_v5\ARM\5.06\Bin\..\include\math.h

@@ -41,6 +41,7 @@
 #include "stm32_private.h"
 #include "rm_usart.h"
 #include "referee.h"
+//#include "controller.h"
 //motor enconde value format, range[0-8191]
 //电机编码值规整 0—8191
 #define ecd_format(ecd)         \

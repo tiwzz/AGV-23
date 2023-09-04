@@ -158,6 +158,6 @@ extern const motor_measure_t *get_chassis_motor_measure_point(uint8_t i);
 
 extern const motor_measure_t *get_shoot_motor_measure_point(uint8_t j);
 
-void CAN_cmd_to_chassis(int16_t relative_angle,
+void CAN_cmd_to_chassis(fp32 relative_angle,
 	                      int32_t chassis_vx, int32_t chassis_vy, int16_t chassis_behaviour );
 #endif

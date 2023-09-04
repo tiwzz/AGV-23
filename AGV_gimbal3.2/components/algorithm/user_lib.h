@@ -2,6 +2,36 @@
 #define USER_LIB_H
 #include "struct_typedef.h"
 
+
+typedef __packed struct
+{
+    uint16_t Order;
+    uint32_t Count;
+
+    float *x;
+    float *y;
+
+    float k;
+    float b;
+
+    float StandardDeviation;
+
+    float t[4];
+} Ordinary_Least_Squares_t;
+void OLS_Init(Ordinary_Least_Squares_t *OLS, uint16_t order);
+float OLS_Derivative(Ordinary_Least_Squares_t *OLS, float deltax, float y);
+
+float float_constrain(float Value, float minValue, float maxValue);
+
+#ifndef user_malloc
+#ifdef _CMSIS_OS_H
+#define user_malloc pvPortMalloc
+#else
+#define user_malloc malloc
+#endif
+#endif
+
+//////////////////////////////////////////////////////////////////////////
 typedef __packed struct
 {
     fp32 input;        // ‰»Î ˝æ›

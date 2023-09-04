@@ -10,7 +10,8 @@
       <TargetName>standard_robot</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::ARMCC</pCCUsed>
+      <pArmCC>5060960::V5.06 update 7 (build 960)::.\5.06</pArmCC>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\5.06</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -186,6 +187,7 @@
             <RvdsVP>2</RvdsVP>
             <RvdsMve>0</RvdsMve>
             <RvdsCdeCp>0</RvdsCdeCp>
+            <nBranchProt>0</nBranchProt>
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
@@ -581,6 +583,26 @@
               <FileType>1</FileType>
               <FilePath>..\bsp\boards\bsp_servo_pwm.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_dwt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\boards\bsp_dwt.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_dwt.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\bsp\boards\bsp_dwt.h</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\boards\bsp_PWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_PWM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\bsp\boards\bsp_PWM.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -770,6 +792,16 @@
               <FileName>stm32.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\stm32\stm32.c</FilePath>
+            </File>
+            <File>
+              <FileName>controller.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\components\controller\controller.c</FilePath>
+            </File>
+            <File>
+              <FileName>controller.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\components\controller\controller.h</FilePath>
             </File>
           </Files>
         </Group>

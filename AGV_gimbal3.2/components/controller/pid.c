@@ -149,7 +149,7 @@ float forwardfeed(float in)
 
 *返 回 值: PID反馈计算输出值
 **********************************************************************************************************/
-void PID_Init(PidTypeDef *pid, uint8_t mode, const fp32 PID[8], fp32 max_out, fp32 max_iout)
+void PID_Init_1(PidTypeDef *pid, uint8_t mode, const fp32 PID[8], fp32 max_out, fp32 max_iout)
 {
     if (pid == NULL || PID == NULL)
     {

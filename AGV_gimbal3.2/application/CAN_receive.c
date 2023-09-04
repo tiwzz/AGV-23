@@ -52,9 +52,10 @@ static uint8_t              chassis_can_send_data[8];
 static CAN_TxHeaderTypeDef  shoot_tx_message;
 static uint8_t              shoot_can_send_data[8];
 static CAN_TxHeaderTypeDef  gimbal_callx_message;
-static uint8_t              gimbal_can_call_data[16];
+static float              gimbal_can_call_data[16];
 		
 extern gimbal_control_t gimbal_control;
+extern RC_ctrl_t rc_ctrl;
 /**
   * @brief          hal CAN fifo call back, receive motor data
   * @param[in]      hcan, the point to CAN handle
@@ -248,9 +249,11 @@ void CAN_cmd_chassis(int16_t motor1, int16_t motor2, int16_t motor3, int16_t mot
   * @param[in]      rev2: ģʽ
   * @retval         none
   */
-void CAN_cmd_to_chassis(int16_t relative_angle,
+
+void CAN_cmd_to_chassis(float relative_angle,
 	                      int32_t chassis_vx, int32_t chassis_vy, int16_t chassis_behaviour )
 {
+		relative_angle = 0.2;
 	  uint32_t send_mail_box;
     gimbal_callx_message.StdId = 0x218;
     gimbal_callx_message.IDE = CAN_ID_STD;
@@ -258,10 +261,10 @@ void CAN_cmd_to_chassis(int16_t relative_angle,
     gimbal_callx_message.DLC = 0x08;
     gimbal_can_call_data[0] = (relative_angle >> 8);
     gimbal_can_call_data[1] = relative_angle;
-    gimbal_can_call_data[2] = (chassis_vx >> 8);
-    gimbal_can_call_data[3] = chassis_vx;
-    gimbal_can_call_data[4] = (chassis_vy >> 8);
-    gimbal_can_call_data[5] = chassis_vy;
+    gimbal_can_call_data[2] = (rc_ctrl.rc.ch[1] >> 8);
+    gimbal_can_call_data[3] = rc_ctrl.rc.ch[1];
+    gimbal_can_call_data[4] = (rc_ctrl.rc.s[0] >> 8);
+    gimbal_can_call_data[5] = rc_ctrl.rc.s[0];
     gimbal_can_call_data[6] = (chassis_behaviour >> 8);
     gimbal_can_call_data[7] = chassis_behaviour;
     HAL_CAN_AddTxMessage( &hcan1,  &gimbal_callx_message, gimbal_can_call_data, &send_mail_box);

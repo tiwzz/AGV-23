@@ -141,7 +141,7 @@ typedef struct
 		fp32 F_out_limit;//Ç°À¡ÏÞ·ù
 
 } PidTypeDef;
-extern void PID_Init(PidTypeDef *pid, uint8_t mode, const fp32 PID[8], fp32 max_out, fp32 max_iout);
+extern void PID_Init_1(PidTypeDef *pid, uint8_t mode, const fp32 PID[8], fp32 max_out, fp32 max_iout);
 extern fp32 PID_Calc(PidTypeDef *pid, fp32 ref, fp32 set);
 
 
